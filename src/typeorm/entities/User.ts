@@ -23,5 +23,5 @@ export class User {
 
   @OneToMany(() => Payment, (payment) => payment.user)
   @JoinColumn()
-  payments: Payment[];
+  payments: Payment;
 }

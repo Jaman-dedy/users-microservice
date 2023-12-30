@@ -16,6 +16,10 @@ export class UsersService {
   }
 
   getUserById(userId: string) {
-    return this.usersRepository.findOneBy({ id: userId });
+    return this.usersRepository.findOne({
+      where: { id: userId },
+      select: ['id', 'username', 'displayname', 'payments'],
+      // relations: ['payments'],
+    });
   }
 }
